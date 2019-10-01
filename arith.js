@@ -13,7 +13,7 @@ const parse = tokens => {
   const consume = () => tokens[i++];
 
   const parseAtom = () =>
-    /^[+*/-]$/.test(peek()) ? consume() : parseInt(consume());
+    /^[+*/-]$/.test(peek()) ? consume() : Number(consume());
 
   const parseCompound = () => {
     consume();
