@@ -3,7 +3,7 @@
 This post illustrates writing an interpreter and a compiler using
 Javascript. We will be interpreting and compiling an arithmetic
 language where we can add, multiply, subtract, and divide
-integers.
+integers (actually it handles floats also).
 
 To start, we need to decide how we'll write the arithmetic expressions.
 We'll use Scheme notations (Scheme is a beautiful programming language).
