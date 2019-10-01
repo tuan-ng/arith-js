@@ -3,8 +3,7 @@
 
 const tokenize = s =>
   s
-    .replace(/\(/g, " ( ")
-    .replace(/\)/g, " ) ")
+    .replace(/([()])/g, " $1 ")
     .trim()
     .split(/\s+/);
 
@@ -14,7 +13,7 @@ const parse = tokens => {
   const consume = () => tokens[i++];
 
   const parseAtom = () =>
-    /^[+*-/]$/.test(peek()) ? consume() : parseInt(consume());
+    /^[+*/-]$/.test(peek()) ? consume() : parseInt(consume());
 
   const parseCompound = () => {
     consume();
